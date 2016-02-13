@@ -110,7 +110,7 @@ var reverseStr = function(str) {
 
 // Put your answer below -------------------------
 var reverseStr = function(str) {
-  var arr = str.split(""); arr.reverse(); arr.join(""); return str;
+  return str.split("").reverse().join("");
 };
 
 // -----------------------------------------------
@@ -126,27 +126,56 @@ var reverseStr = function(str) {
 // Refactor this function to use an object
 // instead of an if/else statement.
 
+// var spanishColor = function(colorName) {
+//   if (colorName.toLowerCase() === "rojo") {
+//     return "#ff0000";
+//   }
+//   else if (colorName.toLowerCase() === "blanco") {
+//     return "#ffffff";
+//   }
+//   else if (colorName.toLowerCase() === "azul") {
+//     return "#0000ff";
+//   }
+//   else if (colorName.toLowerCase() === "verde") {
+//     return "#00ff00";
+//   }
+//   else if (colorName.toLowerCase() === "negro") {
+//     return "#000000";
+//   }
+// };
+//
+// // Put your answer below -------------------------
+//
 var spanishColor = function(colorName) {
-  if (colorName.toLowerCase() === "rojo") {
-    return "#ff0000";
-  }
-  else if (colorName.toLowerCase() === "blanco") {
-    return "#ffffff";
-  }
-  else if (colorName.toLowerCase() === "azul") {
-    return "#0000ff";
-  }
-  else if (colorName.toLowerCase() === "verde") {
-    return "#00ff00";
-  }
-  else if (colorName.toLowerCase() === "negro") {
-    return "#000000";
-  }
+  var color = colorName.toLowerCase();
+  var colorList = {
+    rojo: "#ff0000",
+    blanco: "#ffffff",
+    azul: "#0000ff",
+    verde: "#00ff00",
+    negro: "#000000",
+    };
+    return colorList[colorName];
 };
 
-// Put your answer below -------------------------
-
-
+//Alternative solution using switch
+// var spanishColor = function(colorName) {
+//   var color = colorName.toLowerCase();
+//   switch (colorName) {
+//     case 'rojo':
+//       console.log ("#ff0000");
+//       break;
+//     case 'blanco':
+//       console.log ("#ffffff");
+//       break;
+//     case 'azul':
+//         console.log ("#0000ff");
+//         break;
+//     case 'azul':
+//         console.log ("#0000ff");
+//         break;
+//   }
+// };
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
@@ -163,6 +192,8 @@ var foo = "bar";
 
 // Put your answer below -------------------------
 
+var foo;
+foo = "bar";
 
 // -----------------------------------------------
 
@@ -185,6 +216,10 @@ var callTenTimes = function(callback) {
 
 // Put your answer below -------------------------
 
+var callNTimes = function(callback, choice) {
+  var range = _.range(choice);
+  _.each(range, callback);
+};
 
 // -----------------------------------------------
 
@@ -198,7 +233,7 @@ var callTenTimes = function(callback) {
 // the savvy user to open the console and adjust
 // the score to whatever they want. Refactor the
 // code to protect from this.
-
+//
 // HINT: "global scope"
 
 var score = 0;
@@ -212,6 +247,16 @@ var decreaseScore = function() {
 };
 
 // Put your answer below -------------------------
+
+var increaseScore = function() {
+  var score = 0;
+  score++;
+};
+
+var decreaseScore = function() {
+  var score = 0;
+  score--;
+};
 
 
 // -----------------------------------------------
@@ -233,6 +278,12 @@ var twoPlusTwo = addNumbers(2,2);
 
 // Put your answer below -------------------------
 
+
+var addNumbers = function(numberA, numberB) {
+  return(numberA + numberB);
+};
+
+var twoPlusTwo = addNumbers(2,2);
 
 // -----------------------------------------------
 
