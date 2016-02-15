@@ -76,18 +76,20 @@ console.assert(isVowel("E") === true);
 
  */
 
-function rovarspraket(text){ //bailey --> bobailolyoy
-    var returnString = ""; //empty string
-    if (typeof(text) !== 'string'){return text.toString();} // if not a string, can't go through
-    for (var i = 0; i < text.length; i++) {
-      if (isVowel(text[i]))
-      {returnString = returnString + text[i];} //if a vowel, add to returnString
-
-    else {
-      returnString = returnString + text[i] + "o" + text[i]; //if a consanant, add o and another consanant
+function rovarspraket(text){ //e.g. bailey --> bobailolyoy
+    var returnString = ""; //1. Create empty string so that 'text' has somewhere to go
+    if (typeof(text) !== 'string'){
+      return text.toString(); // 2. If not a string, can't go through
     }
+    for (var i = 0; i < text.length; i++) { // 3. Create 'for loop': starts at first letter, ends on last letter (1.'b' 2.'a' etc.)
+      if (isVowel(text[i]))
+      {returnString = returnString + text[i];} //4(a) If a vowel, add to returnString
+
+      else {
+        returnString = returnString + text[i] + "o" + text[i]; //4(b) If a consanant, add letter, add o and add letter again
+      }
 }
-return returnString;
+return returnString; //5. Return the value
 }
 console.assert(rovarspraket("a") === "a");
 console.assert(rovarspraket("b") === "bob");
@@ -124,12 +126,12 @@ console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew
  * i.e. findLongestWord("book dogs") should return "book"
  */
 
-function findLongestWord(sentence) { /// "This is awesome"
-    var input = sentence.replace("'", "").split(" "); // need to split the string - makes into array and splits at the space
-    var longWord = "";  //create an empty variable - length = 0 initially;
-    for (var i = 0; i < input.length; i++) {  //starts at first word, stops at last
-      if (input[i].length > longWord.length) {
-      longWord = input[i];//need find longest word and put it into longWord
+function findLongestWord(sentence) { //E.g. "This is awesome"
+    var input = sentence.replace("'", "").split(" "); // 1. Split 'sentence' so that each word is separate and put into an array
+    var longWord = "";  //2. Create an empty variable. length = 0 initially;
+    for (var i = 0; i < input.length; i++) {  // 3. Create 'for loop': starts at first word ("This"), stops at last ("awesome")
+      if (input[i].length > longWord.length) { // 4. If "this" is greater than longWord, put it in long word. If "is" greater than longWord (which is now "this") put it in longWord (which you don't because it's shorter)
+      longWord = input[i];//puts input[i] in longWord if condition is met
       }
     }
     return longWord;

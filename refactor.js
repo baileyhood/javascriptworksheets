@@ -155,7 +155,7 @@ var spanishColor = function(colorName) {
     verde: "#00ff00",
     negro: "#000000",
     };
-    return colorList[colorName];
+    return colorList[colorName]; //how come you can't use dot notation here? Why just the brackets?
 };
 
 //Alternative solution using switch
@@ -236,15 +236,15 @@ var callNTimes = function(callback, choice) {
 //
 // HINT: "global scope"
 
-var score = 0;
-
-var increaseScore = function() {
-  score++;
-};
-
-var decreaseScore = function() {
-  score--;
-};
+// var score = 0;
+//
+// var increaseScore = function() {
+//   score++;
+// };
+//
+// var decreaseScore = function() {
+//   score--;
+// };
 
 // Put your answer below -------------------------
 
@@ -309,6 +309,8 @@ var accelerate = function(amount) {
 };
 
 // Put your answer below -------------------------
+//Since the parameter is not given, the NaN value is generated since the arithmetic operation results
+//to undefined.
 
 
 // -----------------------------------------------
