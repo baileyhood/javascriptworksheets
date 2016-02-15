@@ -305,13 +305,19 @@ var twoPlusTwo = addNumbers(2,2);
 var speed = 0;
 
 var accelerate = function(amount) {
-  speed += amount;
+  return speed += amount;
 };
 
 // Put your answer below -------------------------
 //Since the parameter is not given, the NaN value is generated since the arithmetic operation results
 //to undefined.
-
+var accelerate = function(amount) {
+ if (amount > 0) {
+   speed += amount;
+ } else if (amount = " " || amount < 0){
+   speed = 1;
+ }
+};
 
 // -----------------------------------------------
 
